@@ -2,12 +2,12 @@ import { DataTableReducerState } from "lib/filterReducers/DataTableReducer/types
 import { GenericKey, GenericKeyFactory } from "lib/genericKeyFactories/genericKeyFactory";
 
 export interface GenericDataTableKey extends GenericKey {
-  filter: DataTableReducerState;
+  tableData: DataTableReducerState;
 }
 
 export class GenericDataTableKeyFactory extends GenericKeyFactory {
-  pageData(filter: DataTableReducerState): GenericDataTableKey {
-    return { ...this.list("page-data"), filter } as const;
+  pageData(tableData: DataTableReducerState): GenericDataTableKey {
+    return { ...this.list("page-data"), tableData } as const;
   }
 
   dataCount(): GenericKey {
