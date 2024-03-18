@@ -1,5 +1,6 @@
-import { GenericDataTableKey, GenericDataTableKeyFactory, GenericKey } from "lib";
 import { DataTableReducerState } from "lib/filterReducers/DataTableReducer/types";
+import { GenericDataTableKey, GenericDataTableKeyFactory } from "lib/genericKeyFactories/genericDataTableKeyFactory";
+import { GenericKey } from "lib/genericKeyFactories/genericKeyFactory";
 
 export interface FilteredDataTableKey<T_SELECTED_FILTERS_TYPE> {
   filter: T_SELECTED_FILTERS_TYPE;
