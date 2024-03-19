@@ -10,7 +10,10 @@ export const DEFAULT_DATA_TABLE_REDUCER_STATE: DataTableReducerState = {
   pageSize: DEFAULT_PAGE_SIZE,
 };
 
-export type DataTableReducer = (state: DataTableReducerState, action: DataTableReducerActions) => DataTableReducerState;
+export type DataTableReducer = (
+  state: DataTableReducerState,
+  action?: DataTableReducerActions,
+) => DataTableReducerState;
 
 export enum DataTableActionType {
   PageChange = "PAGE_CHANGE",

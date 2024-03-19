@@ -7,9 +7,9 @@ import {
 
 export const dataTableReducer: DataTableReducer = (
   state: DataTableReducerState,
-  action: DataTableReducerActions,
+  action?: DataTableReducerActions,
 ): DataTableReducerState => {
-  switch (action.type) {
+  switch (action?.type) {
     case DataTableActionType.PageChange:
       return { ...state, ...action.payload };
     default:

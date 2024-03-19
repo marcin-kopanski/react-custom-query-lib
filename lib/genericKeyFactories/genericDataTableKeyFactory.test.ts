@@ -1,12 +1,39 @@
 import { GenericDataTableKeyFactory } from "lib";
-import { expect, test } from "vitest";
+import { describe, expect, test } from "vitest";
 
-test("test generic key factory element", () => {
-  const keyFactory = new GenericDataTableKeyFactory("test-factory");
+const keyFactory = new GenericDataTableKeyFactory("test-factory");
 
-  expect(keyFactory.element("test-element")).toStrictEqual({
-    baseName: "test-factory",
-    type: "element",
-    name: "test-element",
+describe("GenericDataTableKeyFactory tests", () => {
+  test("element key", () => {
+    expect(keyFactory.element("test-element")).toStrictEqual({
+      baseName: "test-factory",
+      type: "element",
+      name: "test-element",
+    });
+  });
+
+  test("list key", () => {
+    expect(keyFactory.list("test-list")).toStrictEqual({
+      baseName: "test-factory",
+      type: "list",
+      name: "test-list",
+    });
+  });
+
+  test("pageData key", () => {
+    expect(keyFactory.pageData({ page: 0, pageSize: 50 })).toStrictEqual({
+      baseName: "test-factory",
+      type: "list",
+      name: "page-data",
+      tableData: { page: 0, pageSize: 50 },
+    });
+  });
+
+  test("dataCount key", () => {
+    expect(keyFactory.dataCount()).toStrictEqual({
+      baseName: "test-factory",
+      type: "list",
+      name: "data-count",
+    });
   });
 });

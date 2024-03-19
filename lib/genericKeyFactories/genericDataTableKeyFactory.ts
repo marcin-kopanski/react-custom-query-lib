@@ -14,10 +14,3 @@ export class GenericDataTableKeyFactory extends GenericKeyFactory {
     return { ...this.list("data-count") } as const;
   }
 }
-
-// export const genericDataTableKeyFactory = (domain: string) => ({
-//   ...genericKeyFactory(domain),
-//   pageData: (filter: DataTableReducerState) =>
-//     [{ ...genericKeyFactory(domain).list(), name: "page-data", filter }] as const,
-//   dataCount: () => [{ ...genericKeyFactory(domain).list(), name: "data-count" }] as const,
-// });
